@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AICZ</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      color: #fff;
+      /* Candy-cane stripes */
+      background: repeating-linear-gradient(
+        45deg,
+        #ff0000,
+        #ff0000 20px,
+        #008000 20px,
+        #008000 40px
+      );
+      background-size: cover;
+      height: 100vh;
+      overflow: hidden;
+    }
+    a {
+      display: inline-block;
+      font-size: 28px;
+      text-decoration: none;
+      color: #fff;
+      background-color: rgba(255, 0, 0, 0.8);
+      padding: 15px 30px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      background-color: #00cc66;
+      transform: scale(1.1);
+      text-shadow: 0 0 10px #fff;
+    }
+    p {
+      font-size: 22px;
+      margin-top: 20px;
+      color: red;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 10px;
+      color: red;
+    }
+    .corner-text {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 3px 10px;
+      border-radius: 5px;
+      color: red;
+    }
+
+    /* Snow animation */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 1.2em;
+      user-select: none;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.8;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="corner-text">Andrei di pogi</div>
+
+  <a href="https://vt.tiktok.com/ZSHcnMKQw2DL3-FPlAk/" target="_blank">
+     Buy if you're Pretty/Handsome
+  </a>
+  <p>SIZE MEDIUM//Light Acid Gray</p>
+
+  <!-- Snowflakes -->
+  <script>
+    const snowContainer = document.body;
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.textContent = '❄';
+      snowflake.style.left = Math.random() * 100 + 'vw';
+      snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      snowflake.style.opacity = Math.random();
+      snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+      snowContainer.appendChild(snowflake);
+
+      // Remove snowflake after it falls
+      snowflake.addEventListener('animationend', () => {
+        snowflake.remove();
+      });
+    }
+
+    // Continuous snowfall
+    setInterval(createSnowflake, 200);
+  </script>
+</body>
+</html>
